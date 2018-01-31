@@ -1,0 +1,14 @@
+.ItemsGrid-scroll {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 975px;
+  justify-content: space-between;
+}
+  .ItemsGrid-item {
+    display: flex;
+    margin-bottom: 16px;
+    min-width: 120px;
+    cursor: pointer;
+  }

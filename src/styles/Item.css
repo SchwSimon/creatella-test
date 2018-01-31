@@ -1,0 +1,10 @@
+.Item {
+  padding: 1%;
+  margin: 1%;
+  text-align: center;
+  background-color: white;
+  transition: box-shadow 250ms ease;
+  box-shadow: 1px 1px 0px 1px gray;
+} .Item:hover {
+  box-shadow: 1px 1px 10px 1px gray;
+}
