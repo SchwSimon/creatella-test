@@ -7,7 +7,7 @@
   "scripts": {
     "start": "json-server server/index.js --routes server/routes.json --middlewares server/handle-delay.js server/handle-ads.js",
     "build": "gulp build",
-    "test": "jest --watch --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill"
+    "test": "jest --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill"
   },
   "jest": {
     "transform": {
