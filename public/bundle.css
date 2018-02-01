@@ -1,29 +1,123 @@
 .Item {
-  padding: 1%;
-  margin: 1%;
+  padding: 1% 10px;
+  margin: 10px 8px;
   text-align: center;
   background-color: white;
   transition: box-shadow 250ms ease;
-  box-shadow: 1px 1px 0px 1px gray;
+  box-shadow: 1px 1px 3px 0 gray;
+  border-radius: 2px;
+  min-width: 200px;
+  min-height: 150px;
 } .Item:hover {
-  box-shadow: 1px 1px 10px 1px gray;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
-.ItemsGrid-scroll {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  .Item-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+  } .Item-content:hover .Item-content-price {
+    transform: translateX(-8px);
+  } .Item-content:hover .Item-content-face {
+    box-shadow: inset 1px 1px 4px 1px gray;
+  }
+    .Item-content-time {
+      font-size: 11px;
+      text-align: right;
+      border-bottom: 1px solid lightgray;
+      margin-top: 4px;
+      font-weight: bold;
+    }
+    .Item-content-face {
+      padding: 12px 8px;
+      box-shadow: inset 1px 1px 4px 0 gray;
+      line-height: 1;
+    }
+    .Item-content-toCart {
+      font-size: 17px;
+      margin-bottom: 3px;
+      text-align: right;
+      border-top: 1px dashed #eaeaea;
+      padding-top: 5px;
+    }
+      .Item-content-price,
+      .Item-content-cart {
+        display: inline-block;
+        height: 18px;
+        vertical-align: middle;
+      } .Item-content-price {
+        line-height: 1;
+        margin-right: 8px;
+        transition: transform 320ms ease;
+      } .Item-content-cart {
+        background-image: url(./assets/cart.png);
+        width: 18px;
+      }
+.ItemsGrid {
   margin: 0 auto;
   max-width: 975px;
-  justify-content: space-between;
 }
-  .ItemsGrid-item {
-    display: flex;
-    margin-bottom: 16px;
-    min-width: 120px;
+  .ItemsGrid-sortTitle {
+    font-size: 18px;
+    margin-right: 14px;
+  }
+  .ItemsGrid-sortBtn {
+    overflow: hidden;
+    position: relative;
     cursor: pointer;
+    margin: 30px 10px;
+    padding: 8px 20px;
+    border: 0 none;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px 0 rgba(0,0,0, 0.5);
+    background-color: white;
+    transition: background-color 0.3s;
+    display: inline-block;
+    font-size: 18px;
+    font-family: monochrome;
+  } .ItemsGrid-sortBtn:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0;
+    padding-top: 0;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.06);
+    transform: translate(-50%, -50%);
+  } .ItemsGrid-sortBtn:active:before {
+    width: 120%;
+    padding-top: 120%;
+    transition: width .2s ease-out, padding-top .2s ease-out;
+  } .ItemsGrid-sortBtn.active {
+    text-decoration: underline;
+    background-color: #eeffe9;
+  }
+  .ItemsGrid-scroll {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+    .ItemsGrid-item {
+      display: flex;
+      cursor: pointer;
+      align-self: stretch;
+    }
+
+  .ItemsGrid-loading {
+    margin: 15px auto;
+    display: block;
+  }
+
+  .ItemsGrid-end {
+    margin: 15px 0;
   }
 .Ad {
-
+  padding: 0 10px;
+  margin: 10px 8px 4px;
 }
 .App {
   text-align: center;
@@ -56,6 +150,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: arial, sans, sans-serif;
   background-color: #eaeaea;
+}
+h3, h4, h5, h6 {
+  margin: 0;
 }
