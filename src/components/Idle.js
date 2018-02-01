@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 export const TRACK_EVENTS = [
   'scroll',
@@ -78,6 +79,11 @@ class Idle extends PureComponent {
   render() {
     return null;
   }
+}
+
+Idle.propTypes = {
+  idleTime: PropTypes.number,
+  onIdleChange: PropTypes.func.isRequired,
 }
 
 export default Idle;

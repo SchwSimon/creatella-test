@@ -137,10 +137,11 @@ class ItemsGrid extends Component {
       <div className="ItemsGrid">
         {this.state.itemsSortTypes.length > 0 &&
           <div>
-            Sort By
+            <span className="ItemsGrid-sortTitle">Sort By</span>
             {this.state.itemsSortTypes.map(type => (
               <button
                 key={type}
+                className={'ItemsGrid-sortBtn' + (this.state.requestParams.sort === type ? ' active' : '')}
                 onClick={this.onSort}
                 value={type}
               >{type}</button>
@@ -157,7 +158,7 @@ class ItemsGrid extends Component {
         >
           {this.state.itemsDisplayed.map((item, index) => (
             <div className="ItemsGrid-item" key={item.id + index}>
-              {(this.state.specialItemEnabled && index % this.state.specialItemEvery === 0 && index)
+              {(this.state.specialItemEnabled && (index % this.state.specialItemEvery) === 0 && index)
                 ? <this.props.specialItemComponent />
                 : null
               }

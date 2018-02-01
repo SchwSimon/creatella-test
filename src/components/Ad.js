@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { genAdsQueryValue } from "../actions/ads-actions";
 
@@ -55,6 +56,11 @@ export class Ad extends Component {
       </div>
     );
   }
+}
+
+Ad.propTypes = {
+  genAdsQueryValue: PropTypes.func.isRequired,
+  queryKeyValues: PropTypes.object.isRequired
 }
 
 export default connect(mapStateToProps, mapActionsToProps)(Ad);
