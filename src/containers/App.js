@@ -21,7 +21,7 @@ class App extends PureComponent {
           <ItemsGrid
             fetchLimitInitial={30}
             fetchLimit={15}
-            fetchPage={0}
+            fetchPage={1}
             fetchSort={'id'}
             fetchItemsCallback={requestProducts}
             itemsSortTypes={['id', 'price', 'size']}
