@@ -1,14 +1,64 @@
-.ItemsGrid-scroll {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.ItemsGrid {
   margin: 0 auto;
   max-width: 975px;
-  justify-content: space-between;
 }
-  .ItemsGrid-item {
-    display: flex;
-    margin-bottom: 16px;
-    min-width: 120px;
+  .ItemsGrid-sortTitle {
+    font-size: 18px;
+    margin-right: 14px;
+  }
+  .ItemsGrid-sortBtn {
+    overflow: hidden;
+    position: relative;
     cursor: pointer;
+    margin: 30px 10px;
+    padding: 8px 20px;
+    border: 0 none;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px 0 rgba(0,0,0, 0.5);
+    background-color: white;
+    transition: background-color 0.3s;
+    display: inline-block;
+    font-size: 18px;
+    font-family: monochrome;
+  } .ItemsGrid-sortBtn:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0;
+    padding-top: 0;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.06);
+    transform: translate(-50%, -50%);
+  } .ItemsGrid-sortBtn:active:before {
+    width: 120%;
+    padding-top: 120%;
+    transition: width .2s ease-out, padding-top .2s ease-out;
+  } .ItemsGrid-sortBtn.active {
+    text-decoration: underline;
+    background-color: #eeffe9;
+  }
+  .ItemsGrid-scroll {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+    .ItemsGrid-item {
+      display: flex;
+      cursor: pointer;
+      align-self: stretch;
+    }
+
+  .ItemsGrid-loading {
+    margin: 15px auto;
+    display: block;
+  }
+
+  .ItemsGrid-end {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 15px 0;
   }
