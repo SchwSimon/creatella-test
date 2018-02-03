@@ -16,6 +16,6 @@ gulp.task('build', (callback) => {
   pump([
     gulp.src('./src/index.js'),
     webpack(require('./webpack.config.js')),
-    gulp.dest('./public/')
+    gulp.dest('./build/')
   ], callback);
 });
