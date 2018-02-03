@@ -1,5 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
@@ -34,6 +35,11 @@ module.exports = {
   },
   plugins: [
     //new UglifyJsPlugin()
-    new ExtractTextPlugin('bundle.css')
+    new ExtractTextPlugin('bundle.css'),
+    new HtmlWebpackPlugin({
+      title: 'Products Grid',
+      filename: 'index.html',
+      template: './public/index.html'
+    })
   ]
 }
